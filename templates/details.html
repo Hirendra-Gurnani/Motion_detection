@@ -1,0 +1,28 @@
+{%extends 'home.html'%}
+{% block content %}
+
+{%load static %}
+
+<div>
+	<center>
+		{%for i , j in details.items%}
+		    <h2>  {{i}} : </h2>
+		    	<div style="font-weight: bold;display: flex;justify-content: space-between;overflow:scroll;">
+                    {%for k,l in j.items%}
+                        <div style="background-color: lightgrey;margin-top: 5px">
+                            <img src="static/images/{{l}}" height="350px" width="320px" border="1px solid black "> {{k}} 
+                            
+                            <form action="deleted">
+                            	<button><input type="text" name="delet" value="{{l}}" hidden>Delete</button>
+                            </form>
+                        </div>
+
+		            {%endfor%}
+		    	</div>
+
+		{%endfor%}
+
+    </center>
+	   
+</div>
+{% endblock %} 

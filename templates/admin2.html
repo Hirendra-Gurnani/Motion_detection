@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title></title>
+	<style >
+		#d{
+			background-color: black ;
+			height:30px;
+			width:25%;
+			border:1px solid black;
+			font-size: larger;
+			font-weight: bold;
+			color:green;
+			cursor: pointer;
+
+
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<center>
+			<a href="a_home"><input type="submit" name="home" value="Home" id="d"  ></a>
+			|<!-- <a href=""><input type="button" name="details" value="Details" id="d"></a>| -->
+		    <a href="a_logout"><input type="button" name="a_logout" value="Logout" id="d"></a>
+		   
+	    </center>
+	</div>
+{% block content %}
+
+
+{% endblock %}
+
+</body>
+</html>

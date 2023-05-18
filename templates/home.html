@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        /* background-color: lightgrey; */
+        font-family: "Source Sans Pro", sans-serif !important;
+      }
+      .center_nav {
+        background-color: #090966;
+        color: white;
+        /* padding: 10px; */
+        font-size: 20px;
+        font-weight: bolder;
+        font-family: sans-serif;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+		align-items: center;
+      }
+      .navref {
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+		color: #090966;
+		font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav class="center_nav">
+        <!-- <center> -->
+        <a href="stop"
+          ><input class="navref" style="margin-right: 28px;" type="submit" name="home" value="Home"
+        /></a>
+        <a href="details"
+          ><input class="navref" type="button" name="details" value="Details"
+        /></a>
+
+        <form class="navref" action="setting" method="get" style="display: inline">
+            
+          <select
+            name="setting"
+            title="Setting"
+            oninput="form.submit()"
+			class="navref"
+			style="margin-top: 20px; margin-left: 20px;"
+          >
+            <option selected hidden disabled>Setting</option>
+            <option value="logout">Logout</option>
+            <option value="change">Change Password</option>
+          </select>
+        </form>
+        <!-- </center> -->
+      </nav>
+    </div>
+    {% block content %} {% endblock %}
+  </body>
+</html>

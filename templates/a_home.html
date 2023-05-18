@@ -1,0 +1,32 @@
+{%extends 'admin2.html'%}
+{% block content %}
+
+{%load static %}
+<center>
+<br><br>
+<table border="1px" style="vertical-align: middle;color:green;border-collapse: collapse;" width="50%" bgcolor="black"  >
+	<caption><h2>REGISTERED USERS</h2></caption>
+	<tr height=50px>
+		
+		<th>EMAIL ADDRESS</th>
+		<th>USER NAME</th>
+		<th>DELETE AC</th>
+		
+	
+	</tr>
+	{%for i,j in users.items%}
+	<tr height=30px style="font-weight: bolder;text-align: center;">
+		<td >{{i}}</td>
+		<td >{{j |title}}</td>
+		<td><form action="a_delete">        
+		<button><input type="text" name="delete" value="{{i}}" hidden>Delete</button>
+    </form></td>
+	</tr> 
+	
+	{%endfor%}
+
+</table>
+</center>
+
+{%endblock%}
+

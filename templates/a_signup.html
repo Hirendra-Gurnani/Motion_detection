@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>.r{
+			float: right;
+			width: 200px;
+		}
+		html {
+  font-size: 16px;
+}</style>
+</head>
+<body>
+	<div style="padding-top: 15px"></div>	
+	<center><div style="border: 1px solid black;width: 30%;height:300px;text-align:left;padding: 15px;font-weight: bold;background-color:black;color:green;border-radius: 5px" >
+		<center>Admin Sign Up </center>
+		<form action="admin_signup" method="post" >
+			 {% csrf_token %} 
+			<br><br>
+			
+		Email address:<input type="email" name="email" class="r" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" required><br><br><br>
+		Password :<input type="Password" name="password" class="r" required><br><br><br>
+		Confirm <br> Password :<input type="password" name="pass" class="r" required><br><br>
+		<input type="submit" name="signup" value="signup"  class="r">
+	</form>
+	</div></center>
+</body>
+</html>

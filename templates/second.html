@@ -1,0 +1,31 @@
+{%extends 'home.html'%} {% block content %} {%load static %}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+  body {
+    margin: 0;
+    padding: 0;
+    /* background-color: lightgrey; */
+    font-family: "Source Sans Pro", sans-serif !important;
+  }
+  .strbtn {
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #090966;
+    height: 40px;
+    width: 160px;
+    font-size: x-large;
+    font-weight: bold;
+	margin-top: 200px;
+    border: 3px solid black;
+  }
+</style>
+<center>
+  <a href="start"
+    ><input
+	class="strbtn"
+      type="submit"
+      name="start"
+      value="START"
+  /></a>
+</center>
+{% endblock %}

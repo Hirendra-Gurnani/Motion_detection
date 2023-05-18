@@ -1,0 +1,41 @@
+{%extends 'home.html'%}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>.r{
+			float: right;
+			width: 200px;
+		}
+		html {
+  font-size: 16px;
+}</style>
+</head>
+<body>
+
+
+<div style="padding-top: 15px"></div>	
+	<center><div style="border: 1px solid black;width: 30%;height:300px;text-align:left;padding: 15px;font-weight: bold;background-color:black;color:red;border-radius: 5px" >
+		<center>Change Password </center>
+		<form action="changepass" method="post" >
+			{% csrf_token %}
+			<br><br>
+		Current Passord<input type="password" name="cpass" class="r" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" required><br><br><br>
+		New Password :<input type="Password" name="npass" class="r" required><br><br><br>
+		<input type="submit" name="Confirm" value="Confirm"  class="r">
+	
+	    </form>
+	 <br><br>
+	
+	<div>
+		<br>
+		<h3>
+		{% for m in messages %}
+		{{m}}
+		{% endfor %}
+	</h3>
+	</div>
+	</div></center></body>
+</html>
+{% endblock %}

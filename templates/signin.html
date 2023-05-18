@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+      html {
+        font-size: 16px;
+		font-family: 'Source Sans Pro', sans-serif;
+      }
+      .form_ {
+        border: 2px solid black;
+        border-radius: 50%;
+        height: 480px;
+        width: 470px;
+        padding: 50px;
+      }
+      h1 {
+        text-align: center;
+      }
+      input {
+        border: 3px solid darkblue;
+        font-size: 20px;
+        padding: 15px;
+        border-radius: 20px;
+      }
+      input[type="submit"] {
+        background-color: rgb(9, 9, 102);
+        color: white;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: rgb(74, 170, 55);
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+    <title>Home | Login</title>
+  </head>
+  <body>
+    <div><h1>Motion Detection Login Panel</h1></div>
+    <center>
+      <div class="form_">
+        <center><h2>Sign In</h2></center>
+        <form action="login_auth" method="post">
+          {% csrf_token %}
+          <br /><br />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"
+            required
+            autocomplete="off"
+          /><br /><br /><br />
+          <input
+            type="Password"
+            name="password"
+            placeholder="Password"
+            required
+            autocomplete="off"
+          /><br /><br /><br />
+          <input type="submit" name="signin" value="Sign in" />
+        </form>
+        <br /><br />
+        <center>OR</center>
+        <br />
+
+        <a href="signup">Create Account</a>
+<br>
+        <a href="admin">Admin Login</a>
+
+        <div>
+          <br />
+          <h3>{% for m in messages %} {{m}} {% endfor %}</h3>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>
